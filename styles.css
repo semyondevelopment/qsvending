@@ -1406,6 +1406,34 @@ footer.main-footer {
 .footer-keywords { max-width: 520px; text-align: right; }
 @media (max-width: 768px) { .footer-keywords { text-align: left; } }
 
+.footer-credit {
+  text-align: center;
+  padding: 20px 0 0;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--text-on-dark-muted);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.footer-credit .heart {
+  color: #FF5A7A;
+  display: inline-block;
+  animation: heartBeat 1.8s ease-in-out infinite;
+  margin: 0 2px;
+}
+.footer-credit a {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.footer-credit a:hover { color: var(--bg); border-bottom-color: currentColor; }
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.2); }
+  60% { transform: scale(1); }
+}
+
 /* ========== STICKY MOBILE CTA ========== */
 .mobile-cta-bar {
   display: none;
