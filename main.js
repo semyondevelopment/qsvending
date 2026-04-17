@@ -191,8 +191,8 @@
       const machine = machines[venue] || machines.other;
       const productNames = {
         snacks: 'Popular snack range (chips, chocolate, bars)',
-        cold: 'Cold drinks (water, juice, soft drinks, sports)',
-        hot: 'Hot beverages (coffee, tea, hot chocolate)',
+        cold: 'Cold drinks (water, juice, soft drinks, iced coffee)',
+        sports: 'Sports & energy (Gatorade, Red Bull, electrolytes)',
         healthy: 'Healthy options (nuts, fruit, low-sugar snacks)'
       };
       const sizeLabels = {
