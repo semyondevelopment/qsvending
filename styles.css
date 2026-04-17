@@ -115,6 +115,44 @@ section.tight { padding: 80px 0; }
 .section-dark p { color: var(--text-on-dark-muted); }
 .section-soft { background: var(--bg-soft); }
 
+/* Brand-blue section (on-brand punctuation between pale sections) */
+.section-brand {
+  background: var(--brand-blue);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.section-brand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 214, 10, 0.18), transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.08), transparent 50%);
+  pointer-events: none;
+}
+.section-brand > .container { position: relative; z-index: 1; }
+.section-brand h1, .section-brand h2, .section-brand h3, .section-brand h4 { color: #fff; }
+.section-brand p { color: rgba(255, 255, 255, 0.88); }
+.section-brand .eyebrow {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.section-brand .highlight::after { background: var(--accent); opacity: 0.95; }
+.section-brand .testimonial {
+  border-color: transparent;
+  box-shadow: 0 28px 60px -20px rgba(0, 30, 100, 0.45);
+}
+.section-brand .carousel-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.section-brand .carousel-btn:hover { background: #fff; color: var(--brand-blue); border-color: #fff; }
+.section-brand .dot { background: rgba(255, 255, 255, 0.35); }
+.section-brand .dot.active { background: #fff; }
+
 /* ========== REUSABLE BITS ========== */
 .eyebrow {
   display: inline-block;
@@ -1270,9 +1308,9 @@ nav.main-nav.scrolled {
 /* ========== CTA STRIP ========== */
 .cta-strip {
   padding: 80px 40px;
-  background: var(--bg-dark);
+  background: var(--brand-blue);
   border-radius: var(--radius-xl);
-  color: var(--text-on-dark);
+  color: #fff;
   text-align: center;
   position: relative;
   overflow: hidden;
