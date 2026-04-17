@@ -376,6 +376,13 @@ nav.main-nav.scrolled {
   overflow: hidden;
   padding: 80px 0 100px;
 }
+@media (max-width: 768px) {
+  .hero { padding: 20px 0 60px; }
+  .hero-inner { padding-top: 0 !important; }
+  .hero-badge { margin-bottom: 18px; }
+  .hero h1 { margin-bottom: 16px; }
+  .hero-sub { margin-bottom: 24px; }
+}
 .hero-dark { background: var(--bg-dark); color: var(--text-on-dark); }
 .hero-dark h1, .hero-dark h2 { color: var(--text-on-dark); }
 
