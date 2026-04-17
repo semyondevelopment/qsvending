@@ -27,6 +27,11 @@
   --accent-dark:   #F4C200;
   --accent-soft:   #FFF4B5;
 
+  /* Brand blue (from logo) */
+  --brand-blue:      #0253E5;
+  --brand-blue-dark: #013FB3;
+  --brand-blue-soft: #DDE8FE;
+
   /* Text */
   --text:          #0A2540;
   --text-muted:    #5A6D85;
@@ -88,6 +93,8 @@ h2 { font-size: clamp(1.9rem, 4.2vw, 3.2rem); letter-spacing: -0.03em; }
 h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
 h4 { font-size: 1.08rem; }
 p { color: var(--text-muted); }
+p a, .faq-a a { color: var(--brand-blue); font-weight: 600; border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: var(--transition); }
+p a:hover, .faq-a a:hover { color: var(--brand-blue-dark); }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
 .on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4 { color: var(--text-on-dark); }
@@ -357,8 +364,10 @@ nav.main-nav.scrolled {
   .mobile-menu { display: block; }
   nav.main-nav .nav-cta { display: none; }
 }
-@media (max-width: 480px) {
-  .nav-inner { gap: 12px; }
+@media (max-width: 640px) {
+  nav.main-nav { padding: 10px 0; }
+  nav.main-nav.scrolled { padding: 8px 0; }
+  .nav-inner { gap: 12px; padding: 0 18px; }
 }
 
 /* ========== HERO ========== */
@@ -1194,8 +1203,8 @@ nav.main-nav.scrolled {
 .field select:focus,
 .field textarea:focus {
   outline: 0;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px var(--brand-blue-soft);
 }
 .field select {
   appearance: none;
@@ -2201,8 +2210,8 @@ input[type="range"].calc-slider::-moz-range-thumb {
 }
 .checker-input-row input:focus {
   outline: 0;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px var(--brand-blue-soft);
 }
 .checker-input-row input::placeholder { color: var(--text-muted); letter-spacing: 0.05em; }
 .checker-input-row .btn {
@@ -2391,11 +2400,13 @@ input[type="range"].calc-slider::-moz-range-thumb {
   gap: 4px;
   margin-top: 16px;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--brand-blue);
   font-size: 0.9rem;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--brand-blue);
   padding-bottom: 2px;
+  transition: var(--transition);
 }
+.feature-card .f-link:hover { color: var(--brand-blue-dark); border-bottom-color: var(--brand-blue-dark); gap: 8px; }
 
 /* ========== INLINE CTA BLOCK ========== */
 .mini-cta {
