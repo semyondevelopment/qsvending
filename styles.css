@@ -262,15 +262,24 @@ nav.main-nav.scrolled {
   gap: 40px;
 }
 .logo {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: 800;
-  font-size: 1.35rem;
-  letter-spacing: -0.035em;
   display: inline-flex;
   align-items: center;
-  color: var(--primary);
+  gap: 8px;
+  line-height: 1;
+  text-decoration: none;
 }
-.logo .dot { color: var(--accent); margin-left: 2px; font-size: 1.5em; line-height: 0.5; }
+.logo-img {
+  height: 38px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease;
+}
+.logo:hover .logo-img { transform: scale(1.04); }
+.main-footer .logo-img { height: 44px; }
+@media (max-width: 640px) {
+  .logo-img { height: 32px; }
+  .main-footer .logo-img { height: 38px; }
+}
 
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
