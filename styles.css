@@ -2139,11 +2139,30 @@ input[type="range"].calc-slider::-moz-range-thumb {
   aspect-ratio: 6 / 5;
   overflow: hidden;
   border: 1px solid var(--border);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 .coverage-map-svg {
   width: 100%;
   height: 100%;
   display: block;
+  overflow: visible;
+}
+@media (max-width: 900px) {
+  .coverage-map-visual {
+    aspect-ratio: 1 / 1;
+    max-height: 380px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .coverage-map-visual {
+    padding: 12px;
+    aspect-ratio: auto;
+    height: 300px;
+    max-height: none;
+  }
 }
 
 .coverage-checker h3 {
@@ -2268,7 +2287,24 @@ input[type="range"].calc-slider::-moz-range-thumb {
   gap: 16px;
   margin-top: 32px;
 }
-@media (max-width: 640px) { .coverage-stats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) {
+  .coverage-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .coverage-stat { padding: 16px 8px; }
+  .coverage-stat .num { font-size: 1.3rem; }
+  .coverage-stat .label { font-size: 0.62rem; letter-spacing: 0.06em; }
+}
+@media (max-width: 420px) {
+  .coverage-grid { padding: 20px 16px; gap: 28px; }
+  .checker-input-row .btn { padding: 0 16px; font-size: 0.9rem; }
+  .checker-input-row input { padding: 14px 14px; font-size: 1rem; }
+  .coverage-checker h3 { font-size: 1.35rem; }
+  .map-legend .legend-item { font-size: 0.82rem; }
+}
+
+/* Keep coverage section padding reasonable on mobile */
+@media (max-width: 640px) {
+  #coverage-map { padding-top: 60px; padding-bottom: 60px; }
+}
 .coverage-stat {
   background: var(--bg-soft);
   border: 1px solid var(--border);
