@@ -335,7 +335,7 @@
       // TODO: client to wire up backend endpoint
       const btn = form.querySelector('button[type="submit"]');
       const orig = btn.textContent;
-      btn.textContent = '✓ Thanks! We\'ll call you within 2 business hours';
+      btn.textContent = '✓ Thanks! We\'ll call you back ASAP';
       btn.disabled = true;
       setTimeout(() => { btn.textContent = orig; btn.disabled = false; form.reset(); }, 6000);
     });
@@ -414,7 +414,7 @@
           <button class="exit-modal-close" aria-label="Close">✕</button>
           <span class="exit-modal-badge">◉ Wait!</span>
           <h3 id="exitModalTitle">Leaving without your free machine?</h3>
-          <p>Drop your number and our Brisbane team will call back within 2 business hours. No cost, no commitment.</p>
+          <p>Drop your number and our Brisbane team will call you back ASAP. No cost, no commitment.</p>
           <form id="exitForm" novalidate>
             <div class="field">
               <label for="exitPhone">Phone Number</label>
@@ -456,7 +456,7 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const btn = form.querySelector('button');
-      btn.textContent = '✓ Got it! We\'ll call within 2 hours';
+      btn.textContent = '✓ Got it! We\'ll call you back ASAP';
       btn.disabled = true;
       setTimeout(close, 2500);
     });
