@@ -607,7 +607,7 @@
           <div class="zone-icon">✓</div>
           <div class="zone-result-body">
             <strong>You're in our fast zone${match ? ' — ' + match.name : ''}</strong>
-            <p>48-hour install available. Our team covers your suburb regularly. <a href="contact.html">Claim your free machine →</a></p>
+            <p>Priority install available. Our team covers your suburb regularly. <a href="contact.html">Claim your free machine →</a></p>
           </div>`;
       } else if (n >= 4700 && n <= 4899) {
         result.classList.add('zone-regional');
