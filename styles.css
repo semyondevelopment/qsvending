@@ -2253,8 +2253,7 @@ input[type="range"].calc-slider::-moz-range-thumb {
   position: relative;
   background: linear-gradient(165deg, var(--bg-softer), var(--bg-soft));
   border-radius: var(--radius-lg);
-  padding: 24px;
-  aspect-ratio: 6 / 5;
+  padding: 20px;
   overflow: hidden;
   border: 1px solid var(--border);
   width: 100%;
@@ -2263,14 +2262,15 @@ input[type="range"].calc-slider::-moz-range-thumb {
 }
 .coverage-map-svg {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 6 / 5;
   display: block;
 }
 @media (max-width: 900px) {
-  .coverage-map-visual { max-width: 480px; }
+  .coverage-map-visual { max-width: 520px; padding: 16px; }
 }
 @media (max-width: 480px) {
-  .coverage-map-visual { padding: 14px; max-width: 100%; }
+  .coverage-map-visual { padding: 12px; max-width: 100%; }
 }
 
 .coverage-checker h3 {
