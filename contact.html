@@ -114,7 +114,14 @@
   <div class="container">
     <div class="contact-layout">
       <!-- MULTI-STEP FORM -->
-      <form class="contact-form contact-form-steps" id="enquiryForm" action="#" method="POST" novalidate>
+      <form class="contact-form contact-form-steps" id="enquiryForm" action="https://formsubmit.co/help@qsvending.com.au" method="POST" novalidate>
+        <!-- Formsubmit config -->
+        <input type="hidden" name="_subject" value="New QS Vending enquiry">
+        <input type="hidden" name="_next" value="https://qsvending.com.au/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="source" value="contact-page-form">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="mstep-header">
           <div class="mstep-progress"><div class="mstep-progress-fill"></div></div>
           <div class="mstep-label">

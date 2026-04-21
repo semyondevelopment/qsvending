@@ -327,17 +327,15 @@
     } catch (e) {}
 
     form.addEventListener('submit', e => {
-      e.preventDefault();
       if (!form.checkValidity()) {
+        e.preventDefault();
         form.reportValidity();
         return;
       }
-      // TODO: client to wire up backend endpoint
+      // Browser natively submits to Formsubmit which redirects to thanks.html
       const btn = form.querySelector('button[type="submit"]');
-      const orig = btn.textContent;
-      btn.textContent = '✓ Thanks! We\'ll call you back ASAP';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => { btn.textContent = orig; btn.disabled = false; form.reset(); }, 6000);
     });
   }
 
@@ -405,6 +403,7 @@
 
   /* ---------- EXIT INTENT MODAL ---------- */
   (() => {
+    if (document.body.classList.contains('no-exit')) return;
     if (sessionStorage.getItem('qs_exit_dismissed')) return;
     if (document.querySelector('.exit-modal-backdrop')) return;
 
@@ -415,10 +414,16 @@
           <span class="exit-modal-badge">◉ Wait!</span>
           <h3 id="exitModalTitle">Leaving without your free machine?</h3>
           <p>Drop your number and our Brisbane team will call you back ASAP. No cost, no commitment.</p>
-          <form id="exitForm" novalidate>
+          <form id="exitForm" action="https://formsubmit.co/help@qsvending.com.au" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New QS Vending enquiry (exit popup)">
+            <input type="hidden" name="_next" value="https://qsvending.com.au/thanks.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="source" value="exit-intent-modal">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="field">
               <label for="exitPhone">Phone Number</label>
-              <input type="tel" id="exitPhone" required placeholder="+61 4xx xxx xxx" autocomplete="tel">
+              <input type="tel" id="exitPhone" name="phone" required placeholder="+61 4xx xxx xxx" autocomplete="tel">
             </div>
             <button type="submit" class="btn btn-primary">Call me back →</button>
           </form>
@@ -453,12 +458,11 @@
     }, 2000);
 
     form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!form.checkValidity()) { e.preventDefault(); form.reportValidity(); return; }
+      // Browser natively submits to Formsubmit which redirects to thanks.html
       const btn = form.querySelector('button');
-      btn.textContent = '✓ Got it! We\'ll call you back ASAP';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(close, 2500);
     });
   })();
 
