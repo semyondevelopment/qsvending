@@ -414,7 +414,7 @@
           <span class="exit-modal-badge">◉ Wait!</span>
           <h3 id="exitModalTitle">Leaving without your free machine?</h3>
           <p>Drop your number and our Brisbane team will call you back ASAP. No cost, no commitment.</p>
-          <form id="exitForm" action="https://formsubmit.co/help@qsvending.com.au" method="POST" novalidate>
+          <form id="exitForm" action="https://formsubmit.co/admin@qsvending.com.au" method="POST" novalidate>
             <input type="hidden" name="_subject" value="New QS Vending enquiry (exit popup)">
             <input type="hidden" name="_next" value="https://qsvending.com.au/thanks.html">
             <input type="hidden" name="_captcha" value="false">
